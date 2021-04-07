@@ -4,6 +4,7 @@ import {
 	DetailsContainer,
 	PokeImg,
 	PokemonContainer,
+	PrincipalContainer,
 	TitleButton,
 } from './styles';
 
@@ -24,11 +25,13 @@ const Pokemon: React.FC<pokemonProps> = ({ pokemon }) => {
 
 	return (
 		<PokemonContainer>
-			<TitleButton onClick={() => setToggleDetails(!toggleDetails)}>
-				{pokemon.name}
-			</TitleButton>
-			<h3>ID: {pokemon.pokeId}</h3>
-			<PokeImg src={pokemon.img_url} alt={pokemon.name} />
+			<PrincipalContainer>
+				<TitleButton onClick={() => setToggleDetails(!toggleDetails)}>
+					{pokemon.name}
+				</TitleButton>
+				<h3>ID: {pokemon.pokeId}</h3>
+				<PokeImg src={pokemon.img_url} alt={pokemon.name} />
+			</PrincipalContainer>
 			{toggleDetails ? (
 				<DetailsContainer>
 					<h4>Types: {StringArrayUtil(pokemon.types)}</h4>

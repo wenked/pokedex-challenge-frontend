@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { pokeApiResponse } from '../../types/pokeTypes';
+import Pagination from '../Pagination';
 import Pokemon from '../Pokemon';
 import { PokeDexContainer, PokeListContainer } from './styles';
 
@@ -34,25 +35,21 @@ const Pokedex: React.FC = () => {
 				<div>Error...</div>
 			) : (
 				<PokeListContainer>
+					<Pagination
+						isPreviousData={isPreviousData}
+						offset={offset}
+						setOffset={setOffset}
+						isFetching={isFetching}
+					/>
 					{data?.pokemons.map((poke) => (
-						<Pokemon pokemon={poke} />
+						<Pokemon pokemon={poke} key={poke.id} />
 					))}
-					<button
-						onClick={() => setOffset((old) => Math.max(old - 20, 0))}
-						disabled={offset === 0}>
-						Previous Page
-					</button>{' '}
-					<button
-						onClick={() => {
-							if (!isPreviousData) {
-								setOffset((old) => old + 20);
-							}
-						}}
-						disabled={isPreviousData}>
-						{' '}
-						Next Page
-					</button>
-					{isFetching ? <span> Loading...</span> : null}{' '}
+					<Pagination
+						isPreviousData={isPreviousData}
+						offset={offset}
+						setOffset={setOffset}
+						isFetching={isFetching}
+					/>
 				</PokeListContainer>
 			)}
 		</PokeDexContainer>

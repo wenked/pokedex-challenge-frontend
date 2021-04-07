@@ -3,12 +3,14 @@ import styled from 'styled-components';
 export const PokemonContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
-	margin: 20px;
+	justify-content: center;
+	margin: 0 auto;
+	margin-top: 20px;
 	padding: 20px;
 	background-color: #495057;
 	border-radius: 10px;
 	box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
+	width: 250px;
 `;
 
 export const TitleButton = styled.button`
@@ -26,6 +28,8 @@ export const TitleButton = styled.button`
 		color: #ced4da;
 	}
 `;
+
+export const PrincipalContainer = styled.div``;
 
 export const PokeImg = styled.img``;
 

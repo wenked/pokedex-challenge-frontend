@@ -1,5 +1,6 @@
 import React from 'react';
 import { QueryClientProvider, QueryClient } from 'react-query';
+import Header from './components/Header';
 import Pokedex from './components/Pokedex';
 import GlobalStyle, { Container } from './styles/global';
 
@@ -10,9 +11,7 @@ const App: React.FC = () => {
 		<QueryClientProvider client={client}>
 			<Container>
 				<GlobalStyle />
-				<div>
-					<h1>PokeDex</h1>
-				</div>
+				<Header />
 				<Pokedex />
 			</Container>
 		</QueryClientProvider>

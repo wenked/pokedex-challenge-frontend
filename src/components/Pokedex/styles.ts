@@ -10,5 +10,6 @@ export const PokeListContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	margin: 0 auto;
-	justify-content: space-between;
+	justify-content: center;
+	width: 100%;
 `;
