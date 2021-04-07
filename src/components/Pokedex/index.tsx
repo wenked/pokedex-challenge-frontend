@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import { pokeApiResponse } from '../../types/pokeTypes';
 import Pagination from '../Pagination';
 import Pokemon from '../Pokemon';
-import { PokeDexContainer, PokeListContainer } from './styles';
+import { PokeDexContainer, PokeListContainer, StatusContainer } from './styles';
 
 const fetch = async (offset: number) => {
 	const res = await axios.get(
@@ -14,12 +14,15 @@ const fetch = async (offset: number) => {
 	return res.data;
 };
 
-const Pokedex: React.FC = () => {
-	const [offset, setOffset] = useState(0);
+interface pokedexProps {
+	offset: number;
+	setOffset: React.Dispatch<React.SetStateAction<number>>;
+}
+
+const Pokedex: React.FC<pokedexProps> = ({ offset, setOffset }) => {
 	const {
 		data,
 		isLoading,
-
 		isPreviousData,
 		isFetching,
 		isError,
@@ -30,9 +33,9 @@ const Pokedex: React.FC = () => {
 	return (
 		<PokeDexContainer>
 			{isLoading ? (
-				<div>Loading...</div>
+				<StatusContainer>Loading...</StatusContainer>
 			) : isError ? (
-				<div>Error...</div>
+				<StatusContainer>Failed to fetch data :(</StatusContainer>
 			) : (
 				<PokeListContainer>
 					<Pagination

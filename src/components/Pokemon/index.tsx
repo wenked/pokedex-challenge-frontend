@@ -12,14 +12,6 @@ interface pokemonProps {
 	pokemon: pokemonType;
 }
 
-const StringArrayUtil = (array: string[]) => {
-	const formatedString = array.map((item, i) =>
-		i !== array.length - 1 ? item + ', ' : item
-	);
-
-	return formatedString;
-};
-
 const Pokemon: React.FC<pokemonProps> = ({ pokemon }) => {
 	const [toggleDetails, setToggleDetails] = useState(false);
 
@@ -37,7 +29,7 @@ const Pokemon: React.FC<pokemonProps> = ({ pokemon }) => {
 					<h4>Types: {StringArrayUtil(pokemon.types)}</h4>
 					<h4>Abilities: {StringArrayUtil(pokemon.abilities)}</h4>
 					<h4>Height: {pokemon.height}</h4>
-					<h4>weight: {pokemon.weight}</h4>
+					<h4>Weight: {pokemon.weight}</h4>
 					<h4>Stats: </h4>
 					<h5>HP: {pokemon.stats.hp}</h5>
 					<h5>ATTACK: {pokemon.stats.attack}</h5>
@@ -52,3 +44,17 @@ const Pokemon: React.FC<pokemonProps> = ({ pokemon }) => {
 };
 
 export default Pokemon;
+function StringArrayUtil(
+	types: string[]
+):
+	| string
+	| number
+	| boolean
+	| {}
+	| React.ReactElement<any, string | React.JSXElementConstructor<any>>
+	| React.ReactNodeArray
+	| React.ReactPortal
+	| null
+	| undefined {
+	throw new Error('Function not implemented.');
+}
