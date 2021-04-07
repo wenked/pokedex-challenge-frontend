@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
 import { useQuery } from 'react-query';
 import { pokeApiResponse } from '../../types/pokeTypes';
 import Pagination from '../Pagination';
