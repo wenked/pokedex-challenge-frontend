@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { pokemonType } from '../../types/pokeTypes';
+import { StringArrayUtil } from '../../utils/functionsUtils';
 import {
 	DetailsContainer,
 	PokeImg,
@@ -44,17 +45,3 @@ const Pokemon: React.FC<pokemonProps> = ({ pokemon }) => {
 };
 
 export default Pokemon;
-function StringArrayUtil(
-	types: string[]
-):
-	| string
-	| number
-	| boolean
-	| {}
-	| React.ReactElement<any, string | React.JSXElementConstructor<any>>
-	| React.ReactNodeArray
-	| React.ReactPortal
-	| null
-	| undefined {
-	throw new Error('Function not implemented.');
-}
