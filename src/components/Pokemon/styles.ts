@@ -4,6 +4,7 @@ export const PokemonContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	align-items: center;
 	margin: 0 auto;
 	margin-top: 20px;
 	padding: 20px;
@@ -31,6 +32,10 @@ export const TitleButton = styled.button`
 
 export const PrincipalContainer = styled.div`
 	margin: 0 auto;
+	h3 {
+		display: flex;
+		justify-content: center;
+	}
 `;
 
 export const PokeImg = styled.img``;
