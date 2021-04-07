@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { pokeApiResponse } from '../../types/pokeTypes';
+import Pokemon from '../Pokemon';
 import { PokeDexContainer, PokeListContainer } from './styles';
 
 const fetch = async (offset: number) => {
@@ -34,7 +35,7 @@ const Pokedex: React.FC = () => {
 			) : (
 				<PokeListContainer>
 					{data?.pokemons.map((poke) => (
-						<span>{poke.name}</span>
+						<Pokemon pokemon={poke} />
 					))}
 					<button
 						onClick={() => setOffset((old) => Math.max(old - 20, 0))}
@@ -47,7 +48,6 @@ const Pokedex: React.FC = () => {
 								setOffset((old) => old + 20);
 							}
 						}}
-						// Disable the Next Page button until we know a next page is available
 						disabled={isPreviousData}>
 						{' '}
 						Next Page

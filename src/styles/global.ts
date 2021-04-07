@@ -20,6 +20,7 @@ export const Container = styled.div`
 	display: flex;
 	justify-content: center;
 	align-content: center;
-	height: 100vh;
 	flex-direction: column;
+	max-width: 1300px;
+	margin: auto;
 `;

@@ -10,6 +10,9 @@ const App: React.FC = () => {
 		<QueryClientProvider client={client}>
 			<Container>
 				<GlobalStyle />
+				<div>
+					<h1>PokeDex</h1>
+				</div>
 				<Pokedex />
 			</Container>
 		</QueryClientProvider>
