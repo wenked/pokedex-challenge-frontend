@@ -29,7 +29,9 @@ export const TitleButton = styled.button`
 	}
 `;
 
-export const PrincipalContainer = styled.div``;
+export const PrincipalContainer = styled.div`
+	margin: 0 auto;
+`;
 
 export const PokeImg = styled.img``;
 

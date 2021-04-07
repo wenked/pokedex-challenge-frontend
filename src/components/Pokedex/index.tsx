@@ -8,7 +8,7 @@ import { PokeDexContainer, PokeListContainer } from './styles';
 
 const fetch = async (offset: number) => {
 	const res = await axios.get(
-		`http://localhost:3333/pokemons?limit=20&offset=${offset}`
+		`${process.env.REACT_APP_BASE_URL}?limit=20&offset=${offset}`
 	);
 
 	return res.data;
@@ -19,7 +19,7 @@ const Pokedex: React.FC = () => {
 	const {
 		data,
 		isLoading,
-		error,
+
 		isPreviousData,
 		isFetching,
 		isError,
