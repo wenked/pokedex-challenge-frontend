@@ -12,6 +12,11 @@ export const PokemonContainer = styled.div`
 	border-radius: 10px;
 	box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);
 	width: 250px;
+	transition: 0.2s ease-in-out all;
+	cursor: pointer;
+	&:hover {
+		transform: scale(1.05);
+	}
 `;
 
 export const TitleButton = styled.button`
@@ -44,6 +49,7 @@ export const DetailsContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+
 	h4 {
 		padding: 5px;
 	}
